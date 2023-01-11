@@ -39,6 +39,7 @@ Der Container wird temporär erstellt, basierend auf dem `node:18-alpine` Image 
 `node:18-alpine` ist das Image mit dem wir unseren Dev Container starten.
 
 `sh -c "yarn install && yarn run dev"` <- im Container wird die Shell aufgerufen, und die beiden Commands ausgeführt. Dadurch werden einmal die Dependencies (Node Modules) installiert, mit dem Yarn package manager ([LINK](https://www.typedigital.de/blog/npm-yarn-oder-pnpm) zu mehr Infos).
+
 Der 2. Teil nach dem `&&` lässt das `dev` script, dass in unserem `package.json` definiert ist laufen.
 Da steht `nodemon main.js`, also führt es einfach das Skript `main.js` mit Hilfe von dem [Nodemon](https://nodemon.io) package aus. Dadurch wird es automatisch immer wieder neu geladen, wenn eine Änderung im `main.js` gespeichert wird. Das macht das Arbeiten an dem Projekt deutlich einfacher.
 
@@ -58,7 +59,7 @@ CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS
 
 techie@pc NODEJSDockerTutorial $ docker logs 92e1b13632e4
 ```
-Um die Container logs zu checken könnt ihr einfach, wie ihr im zweiten Befehl oben seht die `Container ID` kopieren, und an den Befehl `docker logs` anfügen.
+Um die Container logs zu checken könnt ihr einfach, wie ihr im zweiten Befehl oben seht die `CONTAINER ID` kopieren, und an den Befehl `docker logs` anfügen.
 
 Wenn alles geklappt hat, lest ihr etwa das hier:
 ```
