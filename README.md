@@ -33,7 +33,7 @@ docker run -dp 3000:3000 \
     node:18-alpine \
     sh -c "yarn install && yarn run dev"
 ```
-Das funktioniert nur, wenn ihr in dem Ordner seid, in dem auch die `package.json` und `main.js` Files sind. Falls ihr später mal den Ordner Namen ändert, muss das sich auch in diesem Befehl wiederspiegeln. 
+Das funktioniert nur, wenn ihr in dem Ordner seid, in dem auch die `package.json` und `main.js` Files sind. Falls ihr später mal den Ordner Namen ändert, muss das sich auch in diesem Befehl widerspiegeln. 
 
 ## Was bedeuted der Befehl?
 Der Container wird temporär erstellt, basierend auf dem `node:18-alpine` Image und den Dateien im Ordner. Der Container spiegelt 1 zu 1 die lokalen Dateien wieder, und wird jedes mal bei einer Code-Änderung (dank `nodemon`) neu gestartet.
