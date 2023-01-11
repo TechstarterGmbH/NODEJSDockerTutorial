@@ -17,7 +17,7 @@ git clone https://github.com/ben1post/NODEJSDockerTutorial
 
 in einen Ordner eurer Wahl kopieren könnt. Von der Basis (oder Template) heraus könnt ihr anfangen euer `main.js` anzupassen, oder per `yarn install` weitere Node JS Packages zu installieren.
 
-## Und warum Docker?
+## Wie starten wir den Docker Container?
 Docker ist echt praktisch, auf RedHat.com gibt es eine schöne Erklärung ([LINK](https://www.redhat.com/de/topics/containers/what-is-docker)).
 Wenn ihr das Repo zu euch runtergeladen habt, und Docker oder Docker Desktop installiert sind, könnt ihr einen interaktiven Node JS Container mit dem folgenden Befehl im Terminal starten:
 
@@ -27,9 +27,9 @@ docker run -dp 3000:3000 \
     node:18-alpine \
     sh -c "yarn install && yarn run dev"
 ```
-Das funktioniert nur, wenn ihr in dem Ordner seid, in dem auch die `package.json` und `main.js` files sind. 
+Das funktioniert nur, wenn ihr in dem Ordner seid, in dem auch die `package.json` und `main.js` Files sind. 
 
-### Development Mode heißt hier:
+## Was bedeuted der Befehl?
 Der Container wird temporär erstellt, basierend auf dem `node:18-alpine` Image und den Dateien im Ordner. Der Container spiegelt 1 zu 1 die lokalen Dateien wieder, und wird jedes mal bei einer Code-Änderung (dank `nodemon`) neu gestartet.
 
 `-dp 3000:3000` <- startet den Container "detached" und mit dem Host Port 3000 gebunden an den Container Port 3000.
