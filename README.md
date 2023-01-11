@@ -21,7 +21,7 @@ in einen Ordner eurer Wahl kopieren könnt. Von der Basis (oder Template) heraus
 Docker ist echt praktisch, auf RedHat.com gibt es eine schöne Erklärung ([LINK](https://www.redhat.com/de/topics/containers/what-is-docker)).
 Wenn ihr das Repo zu euch runtergeladen habt, und Docker oder Docker Desktop installiert sind, könnt ihr einen interaktiven Node JS Container mit dem folgenden Befehl im Terminal starten:
 
-````
+```
 docker run -dp 3000:3000 \
     -w /NODEJSDockerTutorial --mount type=bind,src="$(pwd)",target=/NODEJSDockerTutorial\
     node:18-alpine \
