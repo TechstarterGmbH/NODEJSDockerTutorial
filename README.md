@@ -19,7 +19,13 @@ in einen Ordner eurer Wahl kopieren könnt. Von der Basis (oder Template) heraus
 
 ## Wie starten wir den Docker Container?
 Docker ist echt praktisch, auf RedHat.com gibt es eine schöne Erklärung ([LINK](https://www.redhat.com/de/topics/containers/what-is-docker)).
-Wenn ihr das Repo zu euch runtergeladen habt, und Docker oder Docker Desktop installiert sind, könnt ihr einen interaktiven Node JS Container mit dem folgenden Befehl im Terminal starten:
+Wenn ihr das Repo zu euch runtergeladen habt, dann müsst ihr erst in den neuen Ordner wechseln:
+
+```
+cd NODEJSDockerTutorial/
+```
+
+Wenn Docker oder Docker Desktop installiert sind, könnt ihr nun einen interaktiven Node JS Container mit dem folgenden Befehl im Terminal starten:
 
 ```
 docker run -dp 3000:3000 \
@@ -27,7 +33,7 @@ docker run -dp 3000:3000 \
     node:18-alpine \
     sh -c "yarn install && yarn run dev"
 ```
-Das funktioniert nur, wenn ihr in dem Ordner seid, in dem auch die `package.json` und `main.js` Files sind. 
+Das funktioniert nur, wenn ihr in dem Ordner seid, in dem auch die `package.json` und `main.js` Files sind. Falls ihr später mal den Ordner Namen ändert, muss das sich auch in diesem Befehl wiederspiegeln. 
 
 ## Was bedeuted der Befehl?
 Der Container wird temporär erstellt, basierend auf dem `node:18-alpine` Image und den Dateien im Ordner. Der Container spiegelt 1 zu 1 die lokalen Dateien wieder, und wird jedes mal bei einer Code-Änderung (dank `nodemon`) neu gestartet.
